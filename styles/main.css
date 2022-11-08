@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 13px;
+}
+
+img {
+    max-width: 100%;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient( to top, hsl(240, 73%, 65%), hsl(273, 75%, 66%));
+    height: 100vh;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    width: 85%;
+    border-radius: 1.5rem;
+    padding: 3rem 1rem;
+}
+
+.card-img {
+    position: relative;
+    padding-bottom: 4rem;
+}
+
+.card-img img {
+    position: absolute;
+    width: 82%;
+    top: -160px;
+    left: 19px;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.card-info {
+    text-align: center;
+}
+
+.card-accordian {
+    display: flex;
+    flex-direction: column;
+}
+
+.accordian {
+    padding: 1rem 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.accordian .question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.8rem;
+    color: hsl(237, 12%, 33%);
+    margin-bottom: 0.4rem;
+}
+
+.accordian .question::after{
+    content: url('../images/icon-arrow-down.svg');
+}
+
+.accordian .question.active{
+    font-weight: 700;
+}
+
+.accordian .answer {
+    color: hsl(240, 6%, 50%);
+    display: none;
+    padding: 0.5rem 0;
+    text-align: left;
+}
+
+.accordian .answer.visible {
+    display: block;
+    transition: all 0.3s ease-in-out;
+}
+
+
+@media (min-width: 768px ) {
+    .card {
+        flex-direction: row;
+        width: 70%;
+        height: 450px;
+        padding: 3rem 4rem 3rem 1rem;
+    }
+    .card-img {
+        flex-basis: 50%;
+    }
+
+    .card-img img {
+        top: 0;
+        left: -30px;
+    }
+    .card-info {
+        flex-basis: 50%;
+        align-items: flex-start;
+    }
+
+    .accordian {
+        padding: 0.5rem 0;
+    }
+
+    .accordian .question {
+        gap: 5rem;
+        cursor: pointer;
+    }
+}
